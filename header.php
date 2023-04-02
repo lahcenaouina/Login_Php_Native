@@ -14,31 +14,34 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light barhead">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light barhead ">
         <a class="navbar-brand" href="./">Sellthing</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+        <div class="collapse navbar-collapse d-flex justify-content-end " id="navbarTogglerDemo02">
+
+            <ul class="navbar-nav justify-content-around">
+                <li class="nav-item active ">
+                    <a class="nav-link mr-3 " href="">Home <span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link mr-3" href="#">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">News</a>
+                    <a class="nav-link mr-3" href="#">News</a>
                 </li>
-                <div class="d-flex justify-content-end">
+
+                <div class="d-flex justify-content-around mr-3">
                     <li class="nav-item">
-                        <a class="btn btn-info" href="login.php">Login</a>
+                        <a class="btn btn-info mr-3" href="login.php">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-secondary" href="signin.php">Sign In</a>
+                        <a class="btn btn-secondary mr-3" href="signin.php">Sign In</a>
                     </li>
                 </div>
+            </ul>
         </div>
     </nav>
