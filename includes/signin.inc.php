@@ -28,7 +28,8 @@ if (isset($_POST["submit"])) {
     }
 
     if (EUexist( $conn ,$username , $email) !== false) {
-        header("location: ../signin.php?error=alreadyTaken");
+        $row = EUexist($conn, $username, $email);
+        header("location: ../signin.php?error=".($row["email"])." alreadyTakenBy : ".$row["username"]);
         exit();
     }
 

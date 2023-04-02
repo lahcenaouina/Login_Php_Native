@@ -2,7 +2,7 @@
 
 function emptyInputSingup($name, $username, $email, $pwd, $pwdrep)
 {
-    $result=null ;
+
     if (empty($name) || empty($username) || empty($email) || empty($pwd) || empty($pwdrep)) {
         $result = true;
     }else {
@@ -62,7 +62,7 @@ function  EUexist($conn , $username ,$email) //this function Work for LOGIN and 
         return $row;
 
     } else {
-        //username/ email is still available (for sin up )
+        //username not in database / email username is still available (for sin up )
 
         return false;
     }
@@ -77,12 +77,53 @@ function createUser($conn, $name, $email, $username, $pwd){
         header("location : ../signin.php?error=stmtfailed");
         exit();
     }
-    $hashedpwd = password_hash($pwd, PASSWORD_DEFAULT);
 
-    mysqli_stmt_bind_param($stmt, "ssss", $name , $email, $username ,$hashedpwd);
+    $hashed_password = password_hash($pwd, PASSWORD_DEFAULT);
+
+    mysqli_stmt_bind_param($stmt, "ssss", $name , $email, $username ,$hashed_password);
 
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("location: ../signin.php?error=succeed");
     exit();
 }
+function EmptyinputLogin($input_e_u ,$pwd ){
+    if (empty($input_e_u) || empty($pwd)) {
+        return true;
+    }
+    return false;
+
+}
+
+function loginUser($conn, $input_e_u, $pwd)
+{
+
+    //check the Username oR email exists
+    $NoreExist = EUexist($conn, $input_e_u, $input_e_u);
+
+    if ($NoreExist === false) {
+        header("location: ../login.php?error=NotAlredyExists");
+        exit();
+    }
+
+    //Check Hashed password
+    $pwdHashed = $NoreExist["pass"];
+
+    $checked_pass = password_verify($pwd , $pwdHashed); //match TRUE / not matched false
+
+    if ($checked_pass === true) {
+//    if (var_dump($checked_pass) == true) {
+        session_start();
+        $_SESSION["username"] = $NoreExist["username"];
+        $_SESSION["email"] = $NoreExist["email"];
+        $_SESSION["password"] = $NoreExist["pass"];
+        header("location: ../Profile.php");
+        exit();
+    } else if ($checked_pass === false){
+        header("location: ../login.php?error=WrongPassword ".print_r($checked_pass) .var_dump($checked_pass)." | ".$pwdHashed);
+        exit();
+    }
+
+
+
+};
