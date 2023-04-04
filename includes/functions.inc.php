@@ -120,10 +120,17 @@ function loginUser($conn, $input_e_u, $pwd)
         header("location: ../Profile.php");
         exit();
     } else if ($checked_pass === false){
-        header("location: ../login.php?error=WrongPassword ".print_r($checked_pass) .var_dump($checked_pass)." | ".$pwdHashed);
+        header("location: ../login.php?error=WrongPassword ");
         exit();
     }
 
 
 
 };
+function emptyinsert($var)
+{
+    if (empty($var)){
+        return true;
+    }
+    return false;
+}

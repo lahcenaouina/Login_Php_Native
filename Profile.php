@@ -2,7 +2,21 @@
 include "header.php";
 if (isset($_SESSION["username"])) {
 ?>
+<style>
+  .container,.row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
+  }
+  .row{
+      margin-bottom: 5px;
+  }
+  .rr{
+      padding: 10px;
+  }
+
+</style>
 <div class="container">
     <div class="row">
 
@@ -12,10 +26,7 @@ if (isset($_SESSION["username"])) {
 
             <div>
                 <div class="twPc-button">
-                    <!-- Twitter Button | you can get from: https://about.twitter.com/tr/resources/buttons#follow -->
-                    <a href="https://twitter.com/mertskaplan" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false" data-dnt="true">Follow @mertskaplan</a>
-                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                    <!-- Twitter Button -->
+                    <button style="width: 100px ;margin-top: -12px" class="btn btn-info">Follow</button>
                 </div>
 
                 <a title="<?php echo $_SESSION["username"] ?>" href="https://twitter.com/mertskaplan" class="twPc-avatarLink">
@@ -55,7 +66,7 @@ if (isset($_SESSION["username"])) {
                 </div>
             </div>
         </div>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide rr" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
