@@ -1,6 +1,6 @@
 <?php
 include "header.php";
-if (isset($_SESSION["username"])) {
+if (isset($_SESSION["username"]) && isset($_SESSION["password"])) {
 ?>
 <style>
   .container,.row {
@@ -35,10 +35,10 @@ if (isset($_SESSION["username"])) {
 
                 <div class="twPc-divUser">
                     <div class="twPc-divName">
-                        <a href="https://twitter.com/mertskaplan"><?php echo $_SESSION["username"] ?></a>
+                        <a href="https://twitter.com/mertskaplan"><?php echo $_SESSION["name"] ?></a>
                     </div>
                     <span>
-				<a href="https://twitter.com/mertskaplan">EMAIL : <span><?php echo $_SESSION["email"] ?></span></a>
+				<a href="https://twitter.com/mertskaplan">@<span><?php echo $_SESSION["username"] ?></span></a>
 			</span>
                 </div>
 

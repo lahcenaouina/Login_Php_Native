@@ -1,4 +1,11 @@
+*{
+    font-family: "Segoe UI Historic";
+}
+.input1:focus {
+    outline: none;
 
+
+}
 .twPc-div {
     background: #fff none repeat scroll 0 0;
     border: 1px solid #e1e8ed;

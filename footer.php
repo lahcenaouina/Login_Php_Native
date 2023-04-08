@@ -1,6 +1,11 @@
 <script
-src="Js/script_noti.js">
-
+src="Js/script_reg.js">
+</script>
+<script
+src="Js/script_log.js">
+</script>
+<script
+src="Js/script_reset_pass.js">
 </script>
 <script
     src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

@@ -117,6 +117,7 @@ function loginUser($conn, $input_e_u, $pwd)
         $_SESSION["username"] = $NoreExist["username"];
         $_SESSION["email"] = $NoreExist["email"];
         $_SESSION["password"] = $NoreExist["pass"];
+        $_SESSION["name"] = $NoreExist["name"];
         header("location: ../Profile.php");
         exit();
     } else if ($checked_pass === false){

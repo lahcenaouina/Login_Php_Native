@@ -1,0 +1,1 @@
+localhost/resetpass/create-new-password.inc.php?selector=815ae35fddef9ed5&validator=c32cfcf231d22629b84ceee02414e7a5ed1556276ae9bf35eeb876cda865086eTHis is URL

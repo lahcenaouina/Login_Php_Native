@@ -12,6 +12,7 @@
   <component name="PhpIncludePathManager">
     <include_path>
       <path value="$PROJECT_DIR$/../../php/pear" />
+      <path value="$PROJECT_DIR$/../bin/php/php8.2.0" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
